@@ -1,0 +1,7 @@
+torch
+numpy
+Pillow
+torchvision
+PyQt5
+tqdm
+lpips

@@ -85,7 +85,7 @@ class FaceEditor(QMainWindow):
         drop_list.setCurrentIndex(0)
         drop_list_label = QLabel(self)
         drop_list_label.setText('* select sample:')
-        self.set_text_format(drop_list_label, 'left', 15)
+        self.set_text_format(drop_list_label, 'left', 8)
         drop_list_label.setGeometry(100, 470, 200, 30)
 
         # build editing sliders
@@ -93,7 +93,7 @@ class FaceEditor(QMainWindow):
         for i_slider, key in enumerate(self.direction_dict.keys()):
             tick_label = QLabel(self)
             tick_label.setText('|')
-            self.set_text_format(tick_label, 'center', 10)
+            self.set_text_format(tick_label, 'center', 8)
             tick_label.setGeometry(520 + 175, 470 + i_slider * 40 + 9, 50, 20)
 
             this_slider = QSlider(Qt.Horizontal, self)
@@ -106,14 +106,14 @@ class FaceEditor(QMainWindow):
 
             attr_label = QLabel(self)
             attr_label.setText(key)
-            self.set_text_format(attr_label, 'right', 15)
+            self.set_text_format(attr_label, 'right', 8)
             attr_label.move(520 - 110, 470 + i_slider * 40 + 2)
 
         # build models sliders
         base_h = 560
         channel_label = QLabel(self)
         channel_label.setText('channel:')
-        self.set_text_format(channel_label, 'left', 15)
+        self.set_text_format(channel_label, 'left', 8)
         channel_label.setGeometry(100, base_h + 5, 100, 30)
 
         self.channel_slider = QSlider(Qt.Horizontal, self)
@@ -125,12 +125,12 @@ class FaceEditor(QMainWindow):
         for i, text in enumerate(['1/4', '1/2', '3/4', '1']):
             channel_label = QLabel(self)
             channel_label.setText(text)
-            self.set_text_format(channel_label, 'center', 15)
+            self.set_text_format(channel_label, 'center', 8)
             channel_label.setGeometry(180 + i * 63 - 50 // 2 + 10, base_h + 20, 50, 20)
 
         resolution_label = QLabel(self)
         resolution_label.setText('resolution:')
-        self.set_text_format(resolution_label, 'left', 15)
+        self.set_text_format(resolution_label, 'left', 8)
         resolution_label.setGeometry(100, base_h + 55, 100, 30)
 
         self.resolution_slider = QSlider(Qt.Horizontal, self)
@@ -142,7 +142,7 @@ class FaceEditor(QMainWindow):
         for i, text in enumerate(['128', '256', '512', '1024']):
             resolution_label = QLabel(self)
             resolution_label.setText(text)
-            self.set_text_format(resolution_label, 'center', 15)
+            self.set_text_format(resolution_label, 'center', 8)
             resolution_label.setGeometry(180 + i * 63 - 50 // 2 + 10, base_h + 70, 50, 20)
 
         # build button slider
@@ -171,7 +171,7 @@ class FaceEditor(QMainWindow):
         # extra time stat
         self.time_label = QLabel(self)
         self.time_label.setText('')
-        self.set_text_format(self.time_label, 'center', 18)
+        self.set_text_format(self.time_label, 'center', 8)
         self.time_label.setGeometry(500 - 25, 240, 50, 50)
 
         # status bar
@@ -253,7 +253,7 @@ class FaceEditor(QMainWindow):
         img_op.move(x, y)  # x, y
 
     @staticmethod
-    def set_text_format(text_op, align='center', font_size=18):
+    def set_text_format(text_op, align='center', font_size=8):
         if align == 'center':
             align = Qt.AlignCenter
         elif align == 'left':
